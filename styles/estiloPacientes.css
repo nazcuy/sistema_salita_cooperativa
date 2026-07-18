@@ -1,0 +1,21 @@
+
+
+
+.destacada {
+    background-color: #ca0808;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 50px;
+    font-family: comic sans ms;
+}
+
+#pochoclo {
+    background-color: #3c13ce;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
