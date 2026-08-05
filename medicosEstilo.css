@@ -1,0 +1,28 @@
+/* estilos.css */
+body {
+    background-color: #1d98fc;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #fafafc;
+    text-align: center;
+}
+
+p {
+    color: #fafafc;
+    text-align: center;
+}
+
+form {
+    background-color: #f8f5f5;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #4a95f7;
+    text-align: center;
+}

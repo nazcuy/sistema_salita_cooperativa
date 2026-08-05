@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Medicos</title>
+
+  <link rel="stylesheet" href="medicosEstilo.css">
+
+</head>
+<body>
+
+  <h1>Alta de profesional médico</h1>
+  <p>Completa tus datos para formar parte del registro profesional de Patria Grande</p>
+
+  <form>
+
+    <h2>1. Datos personales y contacto</h2>
+
+    <label>Nombre y Apellido*</label>
+    <input type="text"><br><br>
+
+
+    <label>DNI/Documento*</label>
+    <input type="text" placeholder="Ej. 32356934"><br><br>
+
+    <label>N° de Matrícula*</label>
+    <input type="text" placeholder="MN 123456"><br><br>
+
+    <label>Teléfono Celular*</label>
+    <input type="text" placeholder="Ej. 1143567895"><br><br>
+
+    <label>Partido y Localidad*</label>
+    <input type="text" placeholder="Ej. Avellaneda, Wilde"><br><br>
+
+    <label>Correo Electrónico*</label>
+    <input type="email" placeholder="Medicoejemplo@gmail.com"><br><br>
+
+    <h2>2. Especialidad y Subespecialización</h2>
+
+    <select>
+      <option value="">Seleccionar Especialidad</option>
+      <option value="clinica">Clínica Médica</option>
+      <option value="cardiologia">Cardiología</option>
+      <option value="pediatria">Pediatría</option>
+    </select><br><br>
+
+    <label>Subespecialización o Área de enfoque (opcional)</label><br>
+    <input type="text" placeholder="Ej. Cardiología Infantil, Neumonología Pediátrica, etc."><br><br>
+
+    <h2>3. Días y Horarios disponibles</h2>
+    <p>Podrás cambiarlo luego...</p>
+
+   <select>
+    <option value="">Dias</option>
+    <option value="lunes">Lunes</option>
+    <option value="martes">Martes</option>
+    <option value="miercoles">Miércoles</option>
+    <option value="jueves">Jueves</option>
+    <option value="viernes">Viernes</option>
+   </select>
+
+    <select>
+      <option value="">horario</option>
+      <option value="mañana">Mañana</option>
+      <option value="tarde">Tarde</option>
+      <option value="noche">Noche</option>
+    </select><br><br>
+
+    <button type="cargar">Guardar Formulario</button>
+
+  </form>
+
+  
+
+</body>
+</html>
