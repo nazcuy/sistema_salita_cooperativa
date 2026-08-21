@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga de Historia Clínica</title>
+    <style>
+        /* ====== ESTILOS GENERALES ====== */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* ====== ENCABEZADO Y NAVEGACIÓN ====== */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* ====== CONTENIDO PRINCIPAL ====== */
+        main {
+            width: 80%;
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        /* ====== SECCIONES ====== */
+        section {
+            margin-bottom: 30px;
+        }
+
+        /* ====== FORMULARIO ====== */
+        .campo-formulario {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+            vertical-align: top;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 60%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+            box-sizing: border-box; /* evita que el padding agrande el campo */
+        }
+
+        textarea {
+            resize: vertical; /* solo permite agrandar verticalmente */
+        }
+
+        .campo-formulario button {
+            margin-left: 155px; /* alinea debajo de los campos */
+        }
+
+        /* Botón principal */
+        .boton-principal {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .boton-principal:hover {
+            background-color: #219a52;
+        }
+
+        /* Botón secundario (agregar/quitar) */
+        .boton-secundario {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .boton-secundario:hover {
+            background-color: #2980b9;
+        }
+
+        /* ====== LISTA DE DIAGNÓSTICOS ====== */
+        .lista-diagnosticos {
+            margin-top: 10px;
+            padding-left: 0;
+            list-style: none;
+            width: 60%;
+            margin-left: 155px;
+        }
+
+        .lista-diagnosticos li {
+            background-color: #ecf0f1;
+            padding: 6px 10px;
+            margin-bottom: 5px;
+            border-radius: 3px;
+            border-left: 3px solid #3498db;
+        }
+
+        /* ====== TABLA DE HISTORIAL ====== */
+        .tabla-historial {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .tabla-historial th {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .tabla-historial td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        .tabla-historial tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .tabla-historial a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .tabla-historial a:hover {
+            text-decoration: underline;
+        }
+
+        /* ====== PIE DE PÁGINA ====== */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado del sistema -->
+    <header>
+        <h1>🩺 Sistema de Historias Clínicas</h1>
+    </header>
+
+    <!-- Navegación entre módulos -->
+    <nav>
+        <a href="pacientes.html">Pacientes</a>
+        <a href="medicos.html">Médicos</a>
+        <a href="turnos.html">Turnos</a>
+        <a href="historia-clinica.html">Historia Clínica</a>
+        <a href="recetas.html">Recetas</a>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+        <h2>Registro de Consulta Médica</h2>
+
+        <!-- Formulario de carga -->
+        <section>
+            <form>
+                <!-- Paciente -->
+                <div class="campo-formulario">
+                    <label for="paciente">Paciente:</label>
+                    <select id="paciente" name="paciente">
+                        <option value="">Seleccione paciente...</option>
+                        <option value="1">María Gómez - DNI 28.456.789</option>
+                        <option value="2">Juan Pérez - DNI 30.123.456</option>
+                    </select>
+                </div>
+
+                <!-- Médico -->
+                <div class="campo-formulario">
+                    <label for="medico">Médico tratante:</label>
+                    <select id="medico" name="medico">
+                        <option value="">Seleccione médico...</option>
+                        <option value="1">Dr. Carlos López</option>
+                        <option value="2">Dra. Ana Martínez</option>
+                    </select>
+                </div>
+
+                <!-- Fecha -->
+                <div class="campo-formulario">
+                    <label for="fecha">Fecha de consulta:</label>
+                    <input type="date" id="fecha" name="fecha">
+                </div>
+
+                <!-- Motivo -->
+                <div class="campo-formulario">
+                    <label for="motivo">Motivo de consulta:</label>
+                    <textarea id="motivo" name="motivo" rows="3"></textarea>
+                </div>
+
+                <!-- Diagnósticos -->
+                <fieldset class="campo-formulario">
+                    <legend>Diagnósticos</legend>
+                    <label for="diagnostico">Enfermedad:</label>
+                    <select id="diagnostico" name="diagnostico">
+                        <option value="">Seleccione enfermedad...</option>
+                        <option value="I10">I10 - Hipertensión esencial</option>
+                        <option value="E11">E11 - Diabetes tipo 2</option>
+                    </select>
+                    <button type="button" class="boton-secundario">Agregar diagnóstico</button>
+
+                    <!-- Lista de diagnósticos agregados (hardcodeada de ejemplo) -->
+                    <ul class="lista-diagnosticos">
+                        <li>Hipertensión esencial <button type="button" class="boton-secundario">Quitar</button></li>
+                        <li>Diabetes tipo 2 <button type="button" class="boton-secundario">Quitar</button></li>
+                    </ul>
+                </fieldset>
+
+                <!-- Evolución -->
+                <div class="campo-formulario">
+                    <label for="evolucion">Evolución / Observaciones:</label>
+                    <textarea id="evolucion" name="evolucion" rows="4"></textarea>
+                </div>
+
+                <!-- Indicaciones -->
+                <div class="campo-formulario">
+                    <label for="indicaciones">Indicaciones:</label>
+                    <textarea id="indicaciones" name="indicaciones" rows="3"></textarea>
+                </div>
+
+                <!-- Botón de envío -->
+                <button type="submit" class="boton-principal">Registrar consulta</button>
+            </form>
+        </section>
+
+        <!-- Historial de consultas -->
+        <section>
+            <h2>Historial de consultas del paciente</h2>
+            <table class="tabla-historial">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Médico</th>
+                        <th>Motivo</th>
+                        <th>Diagnósticos</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10/08/2026</td>
+                        <td>Dr. López</td>
+                        <td>Dolor de cabeza</td>
+                        <td>Hipertensión esencial</td>
+                        <td><a href="#">Ver detalle</a></td>
+                    </tr>
+                    <tr>
+                        <td>05/07/2026</td>
+                        <td>Dra. Martínez</td>
+                        <td>Control glucémico</td>
+                        <td>Diabetes tipo 2</td>
+                        <td><a href="#">Ver detalle</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>Sistema de Gestión Sanitaria - Versión 1.0</p>
+    </footer>
+
+</body>
+</html>
