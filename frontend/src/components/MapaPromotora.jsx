@@ -65,7 +65,7 @@ function MapaPromotora({ puntos, cuadriculaSeleccionada, onSeleccionarPunto }) {
     : manzanas;
 
   return (
-    <MapContainer center={[-34.6037, -58.3816]} zoom={14} style={{ height: '400px', width: '100%' }}>
+    <MapContainer center={[-34.6037, -58.3816]} zoom={14} style={{ height: '480px', width: '100%' }}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -1,0 +1,29 @@
+package com.salita.cooperativa.backend.relevamiento;
+
+public record RelevamientoRequest(
+        String barrio,
+        String cuadrilla,
+        String cuadricula,
+        String manzana,
+        String frente,
+        String calle,
+        String altura,
+        String depto,
+        String apellidoNombre,
+        Integer anioNacimiento,
+        Long telefono,
+        String procedencia,
+        String observacionesProcedencia,
+        Integer mayoresEnCasa,
+        Integer menoresEnCasa,
+        String situacionLaboral,
+        String rama,
+        String lugarTrabajo,
+        String observacionesTrabajo,
+        String situacionEducativa,
+        String opinionEconomia,
+        String experienciaOrganizacion,
+        String propuestasMejora,
+        Double lat,
+        Double lng
+) {}
